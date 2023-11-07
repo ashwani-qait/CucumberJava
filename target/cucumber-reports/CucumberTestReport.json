@@ -1,0 +1,252 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "Verify user able to login with valid cred",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 13440000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User opens URL \"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login\"",
+                  "offset": 15
+                }
+              ],
+              "location": "StepDefinitions.OrangeHRMSteps.user_opens_url(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1036000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User enters username \"Admin\" and password \"admin123\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Admin\"",
+                  "offset": 21
+                },
+                {
+                  "val": "\"admin123\"",
+                  "offset": 42
+                }
+              ],
+              "location": "StepDefinitions.OrangeHRMSteps.user_enters_username_and_password(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 65000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User click on login button",
+            "match": {
+              "location": "StepDefinitions.OrangeHRMSteps.user_click_on_login_button()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-11-07T17:50:36.416Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1419000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.OrangeHRMSteps.browseSetup()"
+            }
+          }
+        ],
+        "line": 17,
+        "name": "Verify table contents in  Holidays list - Navigate to configure \u0026 Holidays",
+        "description": "",
+        "id": "feature-to-test-login-functionality;verify-table-contents-in--holidays-list---navigate-to-configure-\u0026-holidays",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4678000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User navigate to configure \u0026 Holidays",
+            "match": {
+              "location": "StepDefinitions.OrangeHRMSteps.user_navigate_Holiday_Tab()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1920000000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "verify all Holidays label and its date",
+            "match": {
+              "location": "StepDefinitions.OrangeHRMSteps.verify_holidays_contents_And_Date(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Holiday Name",
+                  "Date"
+                ]
+              },
+              {
+                "cells": [
+                  "New Year\u0027s Day",
+                  "2023-01-01"
+                ]
+              },
+              {
+                "cells": [
+                  "St. Patrick\u0027s Day (Canada)",
+                  "2023-03-16"
+                ]
+              },
+              {
+                "cells": [
+                  "St. George\u0027s Day(Canada)",
+                  "2023-04-20"
+                ]
+              },
+              {
+                "cells": [
+                  "Victoria Day (Canada)",
+                  "2023-05-18"
+                ]
+              },
+              {
+                "cells": [
+                  "National Aboriginal Day (Canada)",
+                  "2023-06-21"
+                ]
+              },
+              {
+                "cells": [
+                  "June Day (Canada)",
+                  "2023-06-22"
+                ]
+              },
+              {
+                "cells": [
+                  "The National Holiday of Quebec (Canada)",
+                  "2023-06-24"
+                ]
+              },
+              {
+                "cells": [
+                  "Canada Day (Canada)",
+                  "2023-07-01"
+                ]
+              },
+              {
+                "cells": [
+                  "Independence Day (US)",
+                  "2023-07-04"
+                ]
+              },
+              {
+                "cells": [
+                  "Nunavut Day (Canada)",
+                  "2023-07-09"
+                ]
+              },
+              {
+                "cells": [
+                  "Orangeman\u0027s Day (Canada)",
+                  "2023-07-13"
+                ]
+              },
+              {
+                "cells": [
+                  "Remembrance Day (Canada)",
+                  "2023-11-11"
+                ]
+              },
+              {
+                "cells": [
+                  "Veterans Day (US)",
+                  "2023-11-12"
+                ]
+              },
+              {
+                "cells": [
+                  "Christmas Day",
+                  "2023-12-25"
+                ]
+              },
+              {
+                "cells": [
+                  "Boxing Day",
+                  "2023-12-26"
+                ]
+              },
+              {
+                "cells": [
+                  "Boxing Day (Canada)",
+                  "2023-12-28"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "org.junit.ComparisonFailure: expected:\u003c2023-[06-22]\u003e but was:\u003c2023-[12-25]\u003e\n\tat org.junit.Assert.assertEquals(Assert.java:117)\n\tat org.junit.Assert.assertEquals(Assert.java:146)\n\tat StepDefinitions.OrangeHRMSteps.verify_holidays_(OrangeHRMSteps.java:116)\n\tat ✽.verify date of given Holiday name \"June Day (Canada)\" and date \"2023-12-25\"(file:///home/qainfotech/eclipse-workspace/CucumberJava/src/test/resources/Features/OrangeHRM.feature:37)\n",
+              "duration": 879000000,
+              "status": "failed"
+            },
+            "line": 37,
+            "name": "verify date of given Holiday name \"June Day (Canada)\" and date \"2023-12-25\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"June Day (Canada)\"",
+                  "offset": 34
+                },
+                {
+                  "val": "\"2023-12-25\"",
+                  "offset": 63
+                }
+              ],
+              "location": "StepDefinitions.OrangeHRMSteps.verify_holidays_(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@important"
+          }
+        ]
+      }
+    ],
+    "name": "Feature to test Login Functionality",
+    "description": "",
+    "id": "feature-to-test-login-functionality",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/OrangeHRM.feature",
+    "tags": []
+  }
+]
