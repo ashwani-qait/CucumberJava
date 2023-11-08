@@ -21,6 +21,7 @@ public class homePage {
 	By configureMenuOption = By.xpath("//span[contains(text(),'Configure')]//..//li//a[text()='Holidays']");
 	By holidayName = By.xpath("//div[@class='oxd-table-body']//div[contains(@class,'oxd-table-cell')][2]");
 	By holidayDate = By.xpath("//div[@class='oxd-table-body']//div[contains(@class,'oxd-table-cell')][3]");
+	By headerTitle = By.cssSelector("div.oxd-topbar-header-title span");
 
 	public homePage(WebDriver driver) {
 		this.driver = driver;
@@ -32,6 +33,11 @@ public class homePage {
 
 	public void verifyVisibleMenuOptions(String menuOptions) {
 		driver.findElement(menuList).getText().equals(menuOptions);
+	}
+
+	public void verifyHomePageHeader(String expectedHeader) {
+		String actualHeaderTitle = driver.findElement(headerTitle).getText();
+		Assert.assertEquals(actualHeaderTitle, expectedHeader);
 	}
 
 	public void verifyNoResultsIsShownForMenuOption() {

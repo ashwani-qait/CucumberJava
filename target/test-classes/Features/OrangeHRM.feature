@@ -4,6 +4,7 @@ Feature: Feature to test Login Functionality
     Given User opens URL "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
     When User enters username "Admin" and password "admin123"
     And User click on login button
+    Then verify Homepage title should be "Dashboard"
 
   @smoke
   Scenario: Verify search functionality in left side bar

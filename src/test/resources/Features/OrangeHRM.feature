@@ -4,6 +4,7 @@ Feature: Feature to test Login Functionality
     Given User opens URL "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
     When User enters username "Admin" and password "admin123"
     And User click on login button
+    Then verify Homepage title should be "Dashboard"
 
   @smoke
   Scenario: Verify search functionality in left side bar
@@ -34,4 +35,4 @@ Feature: Feature to test Login Functionality
       | Christmas Day                           | 2023-12-25 |
       | Boxing Day                              | 2023-12-26 |
       | Boxing Day (Canada)                     | 2023-12-28 |
-    And verify date of given Holiday name "June Day (Canada)" and date "2023-06-22"
+    Then verify date of given Holiday name "June Day (Canada)" and date "2023-06-22"

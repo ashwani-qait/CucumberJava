@@ -28,7 +28,6 @@ public class OrangeHRMSteps {
 
 	@Before
 	public void browseSetup() {
-		System.out.println("Enter the inside before");
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
@@ -37,10 +36,9 @@ public class OrangeHRMSteps {
 		login = new loginPage(driver);
 		home = new homePage(driver);
 	}
-	
+
 	@Given("User opens URL {string}")
 	public void user_opens_url(String url) {
-
 		driver.navigate().to(url);
 	}
 
@@ -55,9 +53,9 @@ public class OrangeHRMSteps {
 		login.clickonLoginButton();
 	}
 
-	@When("User enters username Admin and password admin123")
-	public void user_enters_username_Admin_and_password_admin123() {
-
+	@Then("verify Homepage title should be {string}")
+	public void verify_HomePage_title(String expectedtitle) {
+		home.verifyHomePageHeader(expectedtitle);
 	}
 
 	@When("User enters text {string} in search Textfield")
@@ -100,7 +98,7 @@ public class OrangeHRMSteps {
 		home.verifyListOfHolidayslabels(listOfActualHolidaysDates, listOfExpectedHolidayDates);
 	}
 
-	@And("verify date of given Holiday name {string} and date {string}")
+	@Then("verify date of given Holiday name {string} and date {string}")
 	public void verify_holidays_(String holidayName, String expectedHolidayDate) {
 
 		List<String> listOfActualHolidays = home.getListOfHolidays();
@@ -110,8 +108,7 @@ public class OrangeHRMSteps {
 		String actualHolidayDate = listOfActualHolidaysDates.get(indexHoliday);
 		Assert.assertEquals(actualHolidayDate, expectedHolidayDate);
 	}
-	
-	
+
 	@After
 	void tearDown() {
 		System.out.println("Enter the inside teardown");
